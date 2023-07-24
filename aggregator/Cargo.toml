@@ -1,0 +1,37 @@
+[package]
+name = "aggregator"
+version = "0.1.0"
+edition = "2021"
+authors = ["Niklas Pfister <git@omikron.dev>"]
+repository = "https://github.com/myOmikron/exfiltration"
+license = "MPL-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Async runtime
+tokio = { version = ">=1.23.1", features = ["rt-multi-thread", "sync", "macros"] }
+
+# Logging
+log = { version = "~0.4" }
+env_logger = { version = "~0.10" }
+
+# Cli parser
+clap = { version = "~4", features = ["derive"] }
+
+# Package capturing
+pcap = { version = "~1" }
+
+# Parsing packets
+etherparse = { version = "0.13" }
+
+# Serialization library
+serde = { version = "~1", features = ["derive"] }
+toml = { version = "~0.7" }
+serde_json = { version = "~1" }
+
+# Compression library
+lz4_flex = { version = "~0.11" }
+
+
+messages = { version = "*", path = "../messages" }
